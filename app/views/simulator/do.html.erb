@@ -1,0 +1,22 @@
+<h1>Car Simulator 5000</h1>
+<h2
+style="color: <%=@car.color%>">Your car is a <%= @car.car_name %></h2>
+<p id="desc"><%= @car.desc %></p>
+<hr/>
+
+<form type="button" action="/simulator/toggle" method="get">
+  <input id="lights" type="submit" value="<%= @car.lightsOn? ? "Lights are on!" : "Lights are off!"%>"/>
+</form>
+
+<p id="speed"><%= @car.speed %>mph</p>
+<form type="button" action="/simulator/accelerate" method="get">
+  <input type="submit" value="Accelerate"/>
+</form>
+
+<form type="button" action="/simulator/brake" method="get">
+  <input type="submit" value="Brake"/>
+</form>
+
+<form action="/simulator/parking_brake" method="get">
+  <input id="parking_brake" type="submit" value="<%= @car.parking_brake ? "Parking brake is off!" : "Parking brake is on!"%>">
+</form>
